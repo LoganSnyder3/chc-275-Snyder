@@ -31,7 +31,7 @@ print(f"The difference of {num3} and {num4} is {difference}")
 num5= input("Enter num 5: ")
 num6 = input("Enter num 6: ")
 num5 = int(num5)
-num623 = int(num6)
+num6 = int(num6)
 product = num5 * num6
 print(f"The product of {num5} and {num6} is {product}")
 
