@@ -6,7 +6,7 @@ Problem 1: hailstone.py
 The hailstone problem (collatz conjecture) is an open problem in the field of number theory in math.
 
 (all of this is inside of a while loop.) (exit condition  == 1)
- - Take any integer (x) (use input and typecasting )
+ - Take any integer (x) (use input and typecasting)
  - if it's odd you multiply it by 3 and add 1 (relevant skills % and if statements) (any odd number divided by 2 has a remainder of 1)
  - if it's even, you divide by 2 (number mod 2 == 0)
  

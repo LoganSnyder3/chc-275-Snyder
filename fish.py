@@ -12,5 +12,9 @@ elif (option == "no"):
     print("Enjoy")
 elif option == "2":
     option = print("You're a fancy fish parent")
+elif option == "3":
+    option = print("You should get more than one")
+else: print("I don't think thats a kind of fish")
+    
     
 
