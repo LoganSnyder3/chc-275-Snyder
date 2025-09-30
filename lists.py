@@ -148,10 +148,3 @@ len(<name of the list>) <= is the absolute length of the lsit
 """
 
 print(len(mylist))
-
-
-
-
-
-
-
