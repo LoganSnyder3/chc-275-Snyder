@@ -21,6 +21,3 @@ baabbabababbabababababbababbabababababababbababaabababaabbabababbababa"
 
 print("Count of Bs: 659")
 print("Count of As: 616")
-
-
-

@@ -1,9 +1,9 @@
 #Problem 3 (palindrome.py)
 
-print("Enter a word or phrase to see  if its a palindrome or type 'stop' to quit.")
+print("Enter a word to see if its a palindrome or type 'stop' to quit.")
 check = False
 while check == False:
-    word = input("Enter a word or phrase: ").strip().lower()
+    word = input("Enter a word: ").strip().lower()
     if word == "stop": 
         print("Goodbye")
         check = True
@@ -25,4 +25,3 @@ while check == False:
         print(f"'{word}' is a palindrome")
     else:
         print(f"'{word}' is not a palindrome.")
-

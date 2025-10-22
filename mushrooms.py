@@ -25,9 +25,4 @@ while check == False:
 
 print("\nSmall mushrooms:", small)
 print("Medium mushrooms:", medium)
-print("Large mushrooms:", large)
-
-
-  
-    
-    
+print("Large mushrooms:", large)    
