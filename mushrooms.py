@@ -1,27 +1,33 @@
 #Problem 2 (mushrooms.py)
 
-mushrooms = []
+small = []
+medium = []
+large = []
+
+print("Enter mushroom sizes one at a time.")
+print("Type 'stop' when you are finished.\n")
+
 check = False
 while check == False:
-    print("Welcome to the mushroom program")
-    print("1. Enter the size of your mushroom")
-    print("2. Sort mushrooms into groups")
-    print("3. quit")
-    option = input("Enter your option: ")
-    if option == "1":
-        option = input("Enter the size of your mushroom: ")
-        if option.isnumeric():
-            option = int(option)
-            if option >= 100:          
+    user_input = input("Enter mushroom size: ").strip().lower()
+    if user_input == "stop":
+        check = True
+    if user_input.isnumeric():
+        size = int(user_input)
+        if size < 100:
+            small.append(size)
+        elif size < 200:
+            medium.append(size)
         else:
-            print(f"{option} was not a number")        
-    elif option == "2":
-        
-    elif option == "3":
-       print("Goodbye")
-       check = True
+            large.append(size)
     else:
-        print("Not a valid option")
+        print(f"'{user_input}' is not a valid number. Please enter a number or type 'stop'.")
+
+print("\nSmall mushrooms:", small)
+print("Medium mushrooms:", medium)
+print("Large mushrooms:", large)
+
+
   
     
     
