@@ -109,3 +109,4 @@ def generate_report(day1_file, day21_file, report_file):
 
 # --- Run Program ---
 generate_report('Day1_20.txt', 'Day21_40.txt', 'report.txt')
+.
