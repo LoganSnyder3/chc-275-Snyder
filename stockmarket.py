@@ -3,5 +3,5 @@ buffer = file.readlines()
 file.close()
 
 #msft
-msft = buffer[0]
+msft = buffer[0].split()
 print(buffer[0])
