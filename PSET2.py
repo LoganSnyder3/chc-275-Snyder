@@ -40,12 +40,74 @@ Submit each file individually on blackbaud.
 """
 
 # Lab 3 – Stock Market Evaluation
-# No "with" statement version
+# No 'with' and no functions
 
-file = open("days1_20.txt","r")
-buffer = file.readlines()
-file.close()
+try:
+    file1 = open("Day1_20.txt", "r")
+    buffer1 = file1.readlines()
+    file1.close()
 
-#msft
-msft = buffer[0]
-print(buffer[0])
+    file2 = open("Day21_40.txt", "r")
+    buffer2 = file2.readlines()
+    file2.close()
+
+except FileNotFoundError:
+    print("Error: One or both input files not found.")
+else:
+    # --- Convert file lines into data ---
+    data1 = {}
+    data2 = {}
+
+    for line in buffer1:
+        parts = line.strip().split()
+        if len(parts) > 1:
+            ticker = parts[0]
+            prices = []
+            for value in parts[1:]:
+                try:
+                    prices.append(float(value))
+                except:
+                    print("Error converting value in", ticker)
+            data1[ticker] = prices
+
+    for line in buffer2:
+        parts = line.strip().split()
+        if len(parts) > 1:
+            ticker = parts[0]
+            prices = []
+            for value in parts[1:]:
+                try:
+                    prices.append(float(value))
+                except:
+                    print("Error converting value in", ticker)
+            data2[ticker] = prices
+
+    # --- Compute averages and write report ---
+    try:
+        report = open("report.txt", "w")
+        report.write("Stock Market Evaluation Report\n")
+        report.write("---------------------------------\n\n")
+
+        for ticker in data1:
+            prices1 = data1[ticker]
+            prices2 = data2[ticker]
+
+            avg1 = sum(prices1) / len(prices1)
+            avg2 = sum(prices2) / len(prices2)
+
+            report.write(ticker + ":\n")
+            report.write("  Days 1–20 Average: " + str(round(avg1, 2)) + "\n")
+            report.write("  Days 21–40 Average: " + str(round(avg2, 2)) + "\n")
+
+            if avg2 > avg1:
+                report.write("  Status: Buy (Average Increased)\n\n")
+            elif avg2 < avg1:
+                report.write("  Status: Sell (Average Decreased)\n\n")
+            else:
+                report.write("  Status: No Change\n\n")
+
+        report.close()
+        print("Report successfully created as report.txt")
+
+    except Exception as e:
+        print("Error while writing report:", e)
