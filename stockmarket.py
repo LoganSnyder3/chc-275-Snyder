@@ -3,16 +3,19 @@
 file = open("days1_20.txt","r")
 buffer = file.readline()
 file.close()
-
-msft = buffer[0]
 print(buffer)
 
 msft = buffer[0].split(",")
 msft.pop(0)
 
-buffer = []
+amzn = buffer[1]
+nvda = buffer[2]
 
-for i in range  (len(msft)):
-    line = f"{msft[i]}\n"
-    buffer.append()
-    
+print(msft)
+
+try:
+    for i in range(len(msft)):
+        msft[i] = int(msft[i])
+except ValueError:
+    print("Must be a number")
+
