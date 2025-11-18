@@ -1,0 +1,15 @@
+MSFT
+  Days 1_20 Average: 397
+  Days 21_40 Average: 395
+  Recommendation: DO NOT BUY
+
+AMZN
+  Days 1_20 Average: 399
+  Days 21_40 Average: 400
+  Recommendation: BUY
+
+NVDA
+  Days 1_20 Average: 390
+  Days 21_40 Average: 396
+  Recommendation: BUY
+
