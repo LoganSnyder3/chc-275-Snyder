@@ -1,11 +1,5 @@
 #Lab 3 - Stock Market Evaluation
 
-<<<<<<< HEAD
-file = open("days1_20.txt","r")
-buffer = file.readline()
-file.close()
-print(buffer)
-=======
 try:
     file = open("days1_20.txt", "r")
     buffer1 = file.readlines()
@@ -29,7 +23,6 @@ except Exception as e:
     buffer2 = []
 else:
     file.close()
->>>>>>> 8a9d483113aced2d94f755efa41da445645550c2
 
 line = buffer1[0].strip().split(",")
 msft1 = []
@@ -38,19 +31,6 @@ while i < len(line):
     msft1.append(int(line[i]))
     i += 1
 
-<<<<<<< HEAD
-amzn = buffer[1]
-nvda = buffer[2]
-
-print(msft)
-
-try:
-    for i in range(len(msft)):
-        msft[i] = int(msft[i])
-except ValueError:
-    print("Must be numbers")
-
-=======
 line = buffer1[1].strip().split(",")
 amzn1 = []
 i = 1
@@ -164,4 +144,3 @@ except Exception as e:
 else:
     report.close()
     print("Report created: report.txt")
->>>>>>> 8a9d483113aced2d94f755efa41da445645550c2
