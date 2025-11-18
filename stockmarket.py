@@ -17,5 +17,5 @@ try:
     for i in range(len(msft)):
         msft[i] = int(msft[i])
 except ValueError:
-    print("Must be a number")
+    print("Must be numbers")
 
