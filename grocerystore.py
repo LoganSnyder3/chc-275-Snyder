@@ -7,5 +7,4 @@ print("2. Remove items")
 print("3. Check out")
 option = input("Enter your selection: ")
 if option == "1":
-    
-    
+    s
