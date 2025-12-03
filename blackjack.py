@@ -41,10 +41,56 @@ def play_blackjack():
     print(f"Your Hand: {display_hand(player_hand)} (Value: {calculate_hand_value(player_hand)})")
     
 #Player's turn
-while True:
-    if calculate_hand_value(player_hand) == 21:
-        print("Blackjack. You win!")
-        return
-    choice = input("Do you want to Hit (H) or Stand (S)? ").strip().lower()
-    if choice == 'h':
+    while True:
+        player_value = calculate_hand_value(player_hand)
+
+        if player_value == 21:
+            print("Blackjack. You win!")
+            return
+
+        if player_value > 21:
+            print("Bust. Dealer wins!")
+            return
+        choice = input("Do you want to Hit (H) or Stand (S)? ").strip().lower()
+
+        if choice == 'h':
+            new_card = deck.pop()
+            player_hand.append(new_card)
+            print(f"\nYou drew: {new_card[0]} of {new_card[1]}")
+            print(f"Your Hand: {display_hand(player_hand)} (Value: {calculate_hand_value(player_hand)})")
+
+        elif choice == 's':
+            break
+
+        else:
+            print("Invalid input. Please enter H or S.")
+
+#Dealer's turn
+    print("\n=== Dealer's Turn ===")
+    print(f"Dealer's Hand: {display_hand(dealer_hand)} (Value: {calculate_hand_value(dealer_hand)})")
+
+    while calculate_hand_value(dealer_hand) < 17:
+        new_card = deck.pop()
+        dealer_hand.append(new_card)
+        print(f"Dealer draws: {new_card[0]} of {new_card[1]}")
+        print(f"Dealer's Hand: {display_hand(dealer_hand)} (Value: {calculate_hand_value(dealer_hand)})")
+
+    # Final results
+    player_value = calculate_hand_value(player_hand)
+    dealer_value = calculate_hand_value(dealer_hand)
+
+    print("\n=== Final Results ===")
+    print(f"Your Hand: {display_hand(player_hand)} (Value: {player_value})")
+    print(f"Dealer's Hand: {display_hand(dealer_hand)} (Value: {dealer_value})")
+
+    if dealer_value > 21:
+        print("Dealer busts! You win!")
+    elif player_value > dealer_value:
+        print("You win!")
+    elif dealer_value > player_value:
+        print("Dealer wins!")
+    else:
+        print("It's a tie!")
         
+#Run game
+play_blackjack()
