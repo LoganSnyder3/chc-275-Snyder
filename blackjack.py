@@ -93,4 +93,9 @@ def play_blackjack():
         print("It's a tie!")
         
 #Run game
-play_blackjack()
+while True:
+    play_blackjack()
+    replay = input("\nPlay again? (Y/N): ").strip().lower()
+    if replay != 'y':
+        print("Thanks for playing!")
+        break
