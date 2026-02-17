@@ -5,7 +5,7 @@
 import math
 
 def getList():
-    userList: []
+    userList = []
 
     print("Welcome to the List Statistics Calculator")
     print("Enter a list of integers or 'q' to end the list.")
@@ -90,5 +90,5 @@ def main():
         else:
             print("Invalid choice.")
             
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
